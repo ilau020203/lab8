@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+
+
+<head>
+<meta http-equiv="Content-Language" content="ru" />
+<meta http-equiv="pragma" content="no-cache" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link href="https://fonts.googleapis.com/css?family=Comfortaa:400,700&amp;subset=cyrillic" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Arsenal:400,700&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="/local/common/fonts/font-awesome-4.7.0/css/font-awesome.css" >
+     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="http://css3-mediaqueries-js.googlecode.com/files/css3-mediaqueries.js"></script>
+    <![endif]-->
+
+
+
+<title>О кафедре Институт СПИНТех</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript" ></script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="/bitrix/cache/css/ip/ipovs/template_eb4a83106bf7690b807bf3694ecdf61f/template_eb4a83106bf7690b807bf3694ecdf61f_v1.css?159686233217610" type="text/css"  data-template-style="true" rel="stylesheet" />
+<script type="text/javascript"  src="/bitrix/cache/js/ip/ipovs/template_7c70bd3f4da2234071c4c701f16b3a42/template_7c70bd3f4da2234071c4c701f16b3a42_v1.js?1596861182674"></script>
+<script type="text/javascript">var _ba = _ba || []; _ba.push(["aid", "8b3e84e1c6db13ea1b7c30904f376e7a"]); _ba.push(["host", "institut-spintex.ru"]); (function() {var ba = document.createElement("script"); ba.type = "text/javascript"; ba.async = true;ba.src = (document.location.protocol == "https:" ? "https://" : "http://") + "bitrix.info/ba.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ba, s);})();</script>
+
+
+
+<link rel="stylesheet" type="text/css" media="screen" href="/bitrix/templates/ipovs/desktop.css" />
+<link rel="stylesheet" type="text/css" media="screen and (max-width:1024px)" href="/bitrix/templates/ipovs/mobile.css" />
+<link rel="stylesheet" type="text/css" href="/local/common/js/simple_modal.css"  />
+<link href="/local/common/js/slider/gallery.css" type="text/css"  rel="stylesheet" />
+<link href="/local/common/js/scrollbar/jquery.mCustomScrollbar.css" type="text/css"  rel="stylesheet" />
+
+
+<script type="text/javascript" src="/local/common/js/scrollbar/js/minified/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="/local/common/js/slider/jquery.slides_aam.js"></script>
+<script type="text/javascript" src="/local/common/js/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<link rel="stylesheet" href="/bitrix/templates/.default/focus/js/PrettyPhoto/css/prettyPhoto.css" type="text/css" media="screen" title="prettyPhoto main stylesheet"/>
+<script src="/bitrix/templates/.default/focus/js/PrettyPhoto/js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
+
+
+
+<script src="/local/common/js/interface.js"></script>
+<script src="/local/common/js/simple_modal.js"></script>
+<script src="/local/common/js/authorisation.js"></script>
+
+
+</head>
+
+<body>
+
+
+
+<div id="err_alert" class="popup_block"></div>
+
+<script type="text/javascript">
+	var Authorisation = new Authorisation();
+
+	$(document).ready(function(){
+		$("a[rel^='prettyPhoto']").prettyPhoto();
+		$(".gallery a[rel^='prettyPhoto']").prettyPhoto();
+	});
+</script>
+
+
+<script src="http://api-maps.yandex.ru/2.0-stable/?load=package.full&lang=ru-RU" type="text/javascript"></script>
+
+<script type="text/javascript">
+//Глобальные JavaScript переменные
+
+//YandexMap
+var map;
+var b;
+var r;
+var gi;
+
+//Массив имен отложенных функций.
+arr_f = new Array();
+
+window.onload = function ()
+{
+// Функция создает окружение YandexMap
+
+	if (document.getElementById('GMap') != undefined )
+	{
+
+	map = new ymaps.Map('GMap', {
+    	center: [55.75, 37.62],
+    	zoom: 5,
+    	behaviors: ['default', 'scrollZoom']
+	});
+	map.controls.add('zoomControl', { top: 35, right: 35});
+	map.controls.add(new ymaps.control.TypeSelector('TYpeSelector', { top: 10 }));
+
+
+	// Создает стиль значка метки  - синий
+	r = new ymaps.Placemark([55.8, 37.6], {}, {
+        preset: 'twirl#blueIcon'
+    });
+
+    // Создает стиль значка метки - красный
+	b = new ymaps.Placemark([55.8, 37.6], {}, {
+        preset: 'twirl#redIcon'
+    });
+
+	/*
+	b = new ymaps.Style();
+	b.iconStyle = new ymaps.IconStyle();
+	b.iconStyle.href = "/bitrix/templates/velo/img/pointer_ohra.png";
+	b.iconStyle.size = new ymaps.Point(23, 38);
+	b.iconStyle.offset = new ymaps.Point(-3, -38);
+	b.iconStyle.shadow = new ymaps.IconShadowStyle();
+	b.iconStyle.shadow.href = "/bitrix/templates/velo/img/pointer_shadow.png";
+	b.iconStyle.shadow.size = new ymaps.Point(27, 18);
+	b.iconStyle.shadow.offset = new ymaps.Point(6, -16);
+
+	r = new ymaps.Style();
+	r.iconStyle = new ymaps.IconStyle();
+	r.iconStyle.href = "/bitrix/templates/velo/img/pointer_green.png";
+	r.iconStyle.size = new ymaps.Point(23, 38);
+	r.iconStyle.offset = new ymaps.Point(-3, -38);
+	r.iconStyle.shadow = new ymaps.IconShadowStyle();
+	r.iconStyle.shadow.href = "/bitrix/templates/velo/img/pointer_shadow.png";
+	r.iconStyle.shadow.size = new ymaps.Point(27, 18);
+	r.iconStyle.shadow.offset = new ymaps.Point(6, -16);
+    */
+
+	// Стартуем функцию вызова сценариев текущей страницы
+	f_onload();
+	}
+};
+
+function f_onload()
+{
+// Функция стартует отложенные сценарии страницы
+var f = "";
+	if( arr_f.length > 0 )
+	{
+		for(i=0; i<arr_f.length; i++)
+		{ f = f + arr_f[i] + '(); '; }
+		eval(f);
+	}
+}
+</script>
+<div id="modal_window" class="popup_block"><div id="modal_window_data"></div></div>
+
+<div id="all">
+
+
+		<div id="header_link_cont">
+		<div id="header_link">
+
+		<div id="header_link_menu">
+<a class="r_button small_text" href="javascript:Authorisation.openAuth();">войти</a>
+</div>
+<div class="clear"></div>
+
+<div class="top_slider_cont">
+
+<div class="top-img">
+
+		<div class="top-img-item" id="bx_3218110189_1923">
+										<img
+					class="preview_picture"
+					border="0"
+					src="/upload/iblock/1e5/internet-service-provider-5146230-c49b33d1-2.jpeg"
+					alt="О кафедре"
+					code="/about/"
+					/>
+															</div>
+</div>
+</div>
+
+<div id="header_link_slogan" class="comfortaa red" style="position:absolute; top:10px; left:10px;">
+<a href="/"><img src="/upload/ipovs/common/spintex_clear_logo.png" border="0" height="90" align="absmiddle" style="float:left;" /></a>
+</div>
+		</div>
+		</div>
+
+
+	<div class="clear"></div>
+
+<div id="main">
+
+	
+
+
+<div id="main_menu_cont">
+
+
+<nav id="main_menu">
+<a id="touch-main-menu" class="mobile-menu" href="#"><i class="fa fa-bars fa-fw"></i></a>
+<ul class="menu">
+
+
+	
+	
+	
+					<li class="root-item"><a href="/news/"><i class="fa fa-info fa-fw"></i>Новости</a>
+				<ul class="sub-menu">
+		
+	
+	
+
+	
+	
+	
+					<li><a href="/news/common/" class="parent">Общие</a>
+				<ul class="sub-menu">
+		
+	
+	
+
+	
+	
+	
+		
+							<li><a href="/education/news/">Образование</a></li>
+			
+		
+	
+	
+
+	
+	
+	
+		
+							<li><a href="/science/news/">Наука</a></li>
+			
+		
+	
+	
+
+	
+			</ul></li></ul></li>	
+	
+					<li class="root-item"><a href="/education/"><i class="fa fa-graduation-cap fa-fw"></i>Образование</a>
+				<ul class="sub-menu">
+		
+	
+	
+
+	
+	
+	
+		
+							<li><a href="/education/bachelor/">Бакалаврам</a></li>
+			
+		
+	
+	
+
+	
+	
+	
+		
+							<li><a href="/education/master/">Магистрам</a></li>
+			
+		
+	
+	
+
+	
+	
+	
+		
+							<li><a href="/education/news/">Новости</a></li>
+			
+		
+	
+	
+
+	
+	
+	
+		
+							<li><a href="/education/list/obrazovatelnye-proekty/">Образовательные проекты</a></li>
+			
+		
+	
+	
+
+	
+			</ul></li>	
+	
+					<li class="root-item"><a href="/science/"><i class="fa fa-flask fa-fw"></i>Наука</a>
+				<ul class="sub-menu">
+		
+	
+	
+
+	
+	
+	
+		
+							<li><a href="/science/news/">Новости</a></li>
+			
+		
+	
+	
+
+	
+	
+	
+		
+							<li><a href="/science/list/eiconrus/">EIConRus</a></li>
+			
+		
+	
+	
+
+	
+	
+	
+		
+							<li><a href="/science/list/apino/">АПИНО</a></li>
+			
+		
+	
+	
+
+	
+			</ul></li>	
+	
+					<li class="root-item"><a href="/achievements/"><i class="fa fa-thumbs-up fa-fw"></i>Достижения</a>
+				<ul class="sub-menu">
+		
+	
+	
+
+	
+	
+	
+		
+							<li><a href="/achievements/list/all/">Коллективные</a></li>
+			
+		
+	
+	
+
+	
+	
+	
+		
+							<li><a href="/achievements/list/personals/">Индивидуальные</a></li>
+			
+		
+	
+	
+
+	
+	
+	
+		
+							<li><a href="/achievements/list/publikatsii/">Публикации</a></li>
+			
+		
+	
+	
+
+	
+			</ul></li>	
+	
+					<li class="root-item-selected"><a href="/about/"><i class="fa fa-puzzle-piece fa-fw"></i>О нас</a>
+				<ul class="sub-menu">
+		
+	
+	
+
+	
+	
+	
+		
+							<li><a href="/about/mission/">Миссия</a></li>
+			
+		
+	
+	
+
+	
+	
+	
+		
+							<li><a href="/about/peoples/">Сотрудники</a></li>
+			
+		
+	
+	
+
+	
+	
+	
+		
+							<li><a href="/about/contacts/">Контакты</a></li>
+			
+		
+	
+	
+
+	</ul></li>
+</ul>
+</nav>
+<div class="menu-clear-left"></div>
+
+
+
+</div>
+
+<div>
+
+
+
+
+</div>
+
+
+
+
+<div id="left_colum">
+
+<div id="page">
+<div id="text">
+
+ 
+<h2>Институт системной и программной инженерии и информационных технологий</h2>
+
+<div>
+  <br />
+</div>
+<b> Институт СПИНТех создан 1 марта 2019 на основе одной кафедры факультета Микроприборов и технической кибернетики (МПиТК) и двух кафедр факультета Прикладной информатики (ПРиТ). В состав Института СПИНТех вошли сотрудники кафедры информатики и программного обеспечения вычислительных систем (ИПОВС), кафедры корпоративных информационных технологий и систем (КИТиС) и кафедры системной среды качества (ССК). </b>
+<div> 
+  <br />
+ </div>
+ 
+<div> 
+  <h3>Историческая информация о кафедре ИПОВС  </h3>
+
+
+  <div>В 1966-1973 гг. кафедрой заведовал д.ф-м.н., профессор, член-корреспондент АН Казахской ССР <b>И.Я. Акушский</b>, с 1973 по 2000 гг. – лауреат Государственной премии СССР, д.т.н., профессор <b>В.Ф. Шаньгин; </b> с 2000 по 2005 гг. - д.т.н. <b>А.Э. Нестеров</b>, ранее самый молодой директор завода &quot;Микрон&quot;; с 2005 года кафедру возглавляет почетный работник ВПО, заслуженный деятель науки г. Москвы  д.т.н, профессор <b>Л.Г. Гагарина </b></div>
+ 
+  <div> 
+    <p>На кафедре вели преподавательскую и научную деятельность крупные ученые, высококвалифицированные специалисты – профессора, доктора наук <b>В.А. Абрамов</b>, <b>Т.И. Лимонова</b>, <b>В.Н. Лошаков</b>, <b>Ю.Е. Чичерин</b>, <b>Ю.М. Сокол</b>, <b>А.Е. Костин</b>, <b>А.И. Пискунов</b>.</p>
+   
+    <p>Многие выпускники кафедры стали крупными учеными, руководителями подразделений и организаций. Среди них директор Института проблем проектирования в микроэлектронике (ИППМ) РАН, академик РАН по Отделению нанотехнологий и информационных технологий <b>А.Л. Стемпковский</b>, первый начальник ВЦ МИЭТа к.т.н. <b>А.В. Савченко</b>, доцент Нантского университета (Франция) к.т.н., <b>Е. Бенуа</b>, руководитель IT-компании (США) к.т.н. <b>М.Л. Шапиро</b>, директор по разработке ПО ЗАО &quot;ЭЛВИИС&quot; д.т.н. <b>Е.С. Янакова</b> и др.</p>
+   
+    <p>Кафедра ИПОВС фактически является кузницей кадров МИЭТ: проректор по учебной работе д.т.н., профессор <b>И.Г.Игнатова</b> в прошлом - преподаватель кафедры, руководитель Центра дистанционного обучения, а также отделения дополнительного обучения и повышения квалификации  к.т.н., доц. <b>Н.Ю. Соколова</b> также начинала свою педагогическую деятельность на кафедре ИПОВС,  доцент факультета «Прикладные информационные технологии» <b>Е.Б. Кемарская</b>, доценты &quot;Института микроприборов и систем управления&quot;, к.т.н. <b>И.В. Ашарина, Р.А. Касимов, </b>преподаватели ИНЭУП - доцент <b>к.э.н. О.Г.Харач</b> и ст. преп. <b>С.С. Лупин</b>, - также выпускники ИПОВС, начальник центра управления образовательными проектами <b>Н.М.Кирьянова</b> - выпускница вечернего отделения ИПОВС, </p>
+   
+    <p><b>Учебный процесс</b></p>
+   
+    <p>С 1972 г. кафедра работает как выпускающая по очной и очно-заочной форме обучения:</p>
+   
+    <p></p>
+   
+    <ul> 
+      <li>с 1972 г. по специальности 0608 «Электронные вычислительные машины» (специализация «Применение ЭВМ в народном хозяйстве»);</li>
+     
+      <li>с 1988 г. по специальности 220400 «Программное обеспечение вычислительной техники и автоматизированных систем»;</li>
+     
+      <li>с 1996 г. (совместно с кафедрой экономики и менеджмента) по специальности 071900 «Информационные системы в экономике»;</li>
+     
+      <li>с 1999 г.  бакалавров и магистров по направлению 552800 «Информатика и вычислительная техника».</li>
+     
+      <li>с 2000 г. (совместно с кафедрой экономики и менеджмента) по специальности 080801 «Прикладная информатика в экономике».</li>
+     
+      <li>с 2011 г.  бакалавров и магистров по направлению подготовки 231000 «Программная инженерия»;</li>
+     
+      <li>с 2014 г.  по направлению подготовки &quot;Программная инженерия&quot;: 09.03.04 - бакалавриат; 09.04.04 - магистратура;</li>
+     
+      <li>с 2016 г.  сетевой формы реализации образовательной программы &quot;Администрирование сетей и кибертехнологии&quot; по направлению подготовки 09.04.04 &quot;Программная инженерия&quot;  </li>
+     </ul>
+   
+    <p><b>Подготовка кадров высшей квалификации</b></p>
+   
+    <p>На кафедре проходят подготовку аспиранты и соискатели по специальностям:</p>
+   
+    <p></p>
+   
+    <ul> 
+      <li>05.13.01 «Системный анализ, управление и обработка информации»;</li>
+     
+      <li>05.13.06 «Автоматизация и управление технологическими процессами и производствами»</li>
+     </ul>
+   
+    <p>В рамках международной образовательной программы по подготовке кадров высшей квалификации республики Мьянма под руководством ведущих профессоров кафедры <b>Л.Г. Гагариной</b>, <b>О.И. Лисова, </b><b>Е.М. Портнова - </b>с 2007г., <b>В.М. Трояновского, В.Д. Колдаева </b>с 2016 г. успешно проходят защиты диссертаций иностранных аспирантов.</p>
+   
+    <p> 
+      <br />
+     </p>
+   </div>
+ </div>
+ 
+
+
+<div style="margin:0 auto 0 auto; text-align:center;">
+<script src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
+<script src="//yastatic.net/share2/share.js"></script>
+<div class="ya-share2" data-services="collections,vkontakte,facebook,odnoklassniki,moimir,gplus,twitter,linkedin,lj,viber,whatsapp,skype,telegram"></div>
+</div><script>
+
+//var elem = parent.document.getElementById("SocialButtons");
+//elem.data-image = "http://иповс.рф";
+//elem.data-title = "";
+
+</script>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="right_colum">
+<div class="text">
+<h4>Важно</h4>
+
+
+
+<div class="ar-list">
+
+	
+	<div class="ar-item" id="bx_651765591_2599">
+				<div class="photo_cont">
+		<div class="photo">
+							<a href="/achievements/list/dostizheniya-instituta-spintekh-2018-2020.html"><img class="preview_picture" border="0" src="/upload/iblock/7db/900x600_adaptiveResize_december_2019_spin.jpg" alt="Достижения Института СПИНТех 2018-2020" title="Достижения Института СПИНТех 2018-2020" /></a>
+					</div>
+		</div>
+		
+
+						<div class="news_title">
+			<h6>
+							<a href="/achievements/list/dostizheniya-instituta-spintekh-2018-2020.html">Достижения Института СПИНТех 2018-2020</a>
+						</h6>
+			
+		</div>
+									<div></div>
+			</div>
+
+	
+	<div class="ar-item" id="bx_651765591_2039">
+				<div class="photo_cont">
+		<div class="photo">
+							<a href="/achievements/list/dostizheniya-kafedry-ipovs-v-2017-gg.html"><img class="preview_picture" border="0" src="/upload/iblock/477/ig_olimpiad_2017.png" alt="Достижения кафедры ИПОВС в 2017 гг." title="Достижения кафедры ИПОВС в 2017 гг." /></a>
+					</div>
+		</div>
+		
+
+						<div class="news_title">
+			<h6>
+							<a href="/achievements/list/dostizheniya-kafedry-ipovs-v-2017-gg.html">Достижения кафедры ИПОВС в 2017 гг.</a>
+						</h6>
+			
+		</div>
+									<div></div>
+			</div>
+
+</div>
+
+<br>
+
+
+
+<div class="ar-list">
+
+	
+	<div class="ar-item" id="bx_1373509569_2525">
+				<div class="photo_cont">
+		<div class="photo">
+							<a href="/education/news/ispolnenie-ftsp.html"><img class="preview_picture" border="0" src="/upload/iblock/e05/fcp_0.jpg" alt="Исполнение ФЦП" title="Исполнение ФЦП" /></a>
+					</div>
+		</div>
+		
+
+						<div class="news_title">
+			<h6>
+							<a href="/education/news/ispolnenie-ftsp.html">Исполнение ФЦП</a>
+						</h6>
+			
+		</div>
+									<div></div>
+			</div>
+
+	
+	<div class="ar-item" id="bx_1373509569_2329">
+				<div class="photo_cont">
+		<div class="photo">
+							<a href="/education/news/my-teper-institut-spintekh.html"><img class="preview_picture" border="0" src="/upload/iblock/3e3/Spintekh%20%281%29.jpg" alt="Мы теперь Институт СПИНТЕХ" title="Мы теперь Институт СПИНТЕХ" /></a>
+					</div>
+		</div>
+		
+
+						<div class="news_title">
+			<h6>
+							<a href="/education/news/my-teper-institut-spintekh.html">Мы теперь Институт СПИНТЕХ</a>
+						</h6>
+			
+		</div>
+									<div></div>
+			</div>
+
+</div>
+
+
+
+
+
+</div>
+
+<div class="text" style="margin-top:30px;">
+
+<div class="text_red otstup_10"> 
+  <h4>Самообследование</h4>
+ </div>
+ 
+<div class="text_gray otstup_10"> 
+  <div class="docicon ico_ppt"><a href="/upload/ipovs/docs/Отчет о самообследовании ОП 2021_СПИНТех_3.1.docx" >Отчет за 2020 г.</a></div>
+ 
+  <div class="docicon ico_ppt"> <a href="/upload/ipovs/docs/Самообследование СПИНТех_5 программ-2019.zip" >Отчет за 2019 г.</a> </div>
+ 
+  <div class="docicon ico_ppt"> <a href="/upload/ipovs/docs/ИПОВС_2018_(за 2017 год).docx" >Отчет за 2017 г.</a> </div>
+ 
+  <div class="docicon ico_ppt"> <a href="/upload/ipovs/docs/ИПОВС_2017 (за 2016 год).docx" >Отчет за 2016 г.</a> </div>
+ 
+  <div class="docicon ico_ppt"> <a href="/upload/ipovs/docs/ИПОВС_2016 (за 2015 год).docx" >Отчет за 2015 г.</a> </div>
+ 
+  <div class="docicon ico_ppt"> <a href="/upload/ipovs/docs/ИПОВС_2015 (за 2014 год).docx" >Отчет за 2014 г.</a> </div>
+ </div>
+</div>
+
+</div>
+
+<br clear="all" />
+
+<div id="sub_page">
+</div>
+
+</div>
+
+<div id="bottom_link_cont">
+<div id="bottom_link">
+
+<div style="float:left;">
+	<span class="inline"><a href="/" title="Главная"><img src="/upload/ipovs/common/spintex_clear_logo.png" border="0" height="60" valign="top" align="left" /></a></span>
+	<span class="inline" style="margin-left:30px;"><a href="/PersonalDatePolitika.php">Политика в области использования<br>персональных данных</a></span>
+</div>
+
+<div style="float:right;">
+	© Институт СПИНТЕХ, МИЭТ, 2017-2019<br>
+	<small>Сайт использует cookies</small>
+</div>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter47599546 = new Ya.Metrika({
+                    id:47599546,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/47599546" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<script>!function(e,t,d,s,a,n,c){e[a]={},e[a].date=(new Date).getTime(),n=t.createElement(d),c=t.getElementsByTagName(d)[0],n.type="text/javascript",n.async=!0,n.src=s,c.parentNode.insertBefore(n,c)}(window,document,"script","https://ipovsrf.push.world/embed.js","pw"),pw.websiteId="0513d1c50f18f6ec8113140a76ec8743272bdbec9cbda1ea8058c3c80bbc0327";</script>
+</div>
+</div>
+
+</div>
+
+
+<!-- скрипты импортирующиеся и запускающиеся после загрузки -->
+<script type="text/javascript" src="/local/common/js/Resizer.js"></script>
+
+</body>
+</html>
